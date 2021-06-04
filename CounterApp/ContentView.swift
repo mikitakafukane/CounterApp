@@ -11,8 +11,15 @@ struct ContentView: View {
     @State var number = 0
     var body: some View {
         VStack {
-            Text("\(number)")
-                .padding()
+            ZStack{
+                Image("counter")
+                    .resizable()
+                    .aspectRatio(contentMode:.fit)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                Text("\(number)")
+                    .foregroundColor(Color.white)
+                    .padding()
+            }
             Button(action: {self.number += 1}) {
                 Text("カウント")
             }
